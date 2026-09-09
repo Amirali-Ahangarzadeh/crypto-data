@@ -1,10 +1,6 @@
 
 
-function App() {
-
-  return (
-    <div>aaaaa</div>
-  )
+export default function App() {
+ 
+  return <>CG-xR4gwsvYPFNcVX2PbfCLEb74</>;
 }
-
-export default App
