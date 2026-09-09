@@ -24,4 +24,4 @@ a{
   color: inherit;
 }
 
-/* @import "tailwindcss"; */
+@import "tailwindcss";
