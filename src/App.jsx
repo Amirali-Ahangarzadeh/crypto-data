@@ -1,6 +1,7 @@
+import HomePage from "./components/templates/HomePage";
 
 
 export default function App() {
  
-  return <>CG-xR4gwsvYPFNcVX2PbfCLEb74</>;
+  return (<HomePage />);
 }
