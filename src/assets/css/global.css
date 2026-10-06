@@ -11,12 +11,16 @@ body{
   padding: 10px;
   background-color: #131315;
   color: #fff;
+  outline: none;
+  border: none;
 }
 
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  outline: none;
+  border: none;
 }
 
 a{
