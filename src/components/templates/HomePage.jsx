@@ -3,6 +3,7 @@ import TableCoins from "../module/TableCoins";
 import { getData } from "../../services/getApi";
 import Pagination from "../module/Pagination";
 import Search from "../module/Search";
+import Chart from "../module/Chart";
 
 export default function HomePage() {
   const [data, setData] = useState([]);
@@ -11,6 +12,7 @@ export default function HomePage() {
 
   const [page, setPage] = useState(1);
   const [currency, setCurrency] = useState('usd');
+  const [chart, setChart] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,15 +40,17 @@ export default function HomePage() {
       setPage((page) => page + 1);
     }
   };
+
   return (
     <>
       <Search currency={currency} setCurrency={setCurrency} />
-      <TableCoins data={data} error={error} loading={loading} currency={currency} />
+      <TableCoins data={data} error={error} loading={loading} currency={currency} setChart={setChart} />
       <Pagination
         prevHandler={prevHandler}
         nextHandler={nextHandler}
         page={page}
       />
+      {chart && <Chart chart={chart} setChart={setChart} />}
     </>
   );
 }

@@ -4,10 +4,12 @@ const BASE_URL = "https://api.coingecko.com/api/v3/";
 const setHeaders = { headers: { "x-cg-demo-api-key": "CG-xR4gwsvYPFNcVX2PbfCLEb74" } };
 
 
-const getData = async (route, page = 1) => {
+const getData = async (route, page = null) => {
 
-  const url = page ?  `${BASE_URL}${route}&page=${page}` : `${BASE_URL}${route}}`;
+
+  const url = page ?  `${BASE_URL}${route}&page=${page}` : `${BASE_URL}${route}`;
   try {
+
     const controller = new AbortController();
     const response = await fetch(url, setHeaders, {signal:controller.signal});
     if (response.status != 200) {
