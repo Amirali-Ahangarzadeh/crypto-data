@@ -15,19 +15,79 @@
   background-color: #d33636;
   width: 30px;
   height: 30px;
-  line-height:25px;
+  line-height: 25px;
   text-align: center;
   margin: 30px 0 0 30px;
   border-radius: 50%;
   cursor: pointer;
 }
 
-.chart{
-  width: 800px;
+.chart {
+  width: 1100px;
   margin: auto;
   padding: 20px;
-  margin-top: 50px;
+  margin-top: 10px;
   background-color: #18181ce6;
   border: 2px solid #404042;
   border-radius: 20px;
+}
+
+.graph {
+  width: 1000px;
+  height: 300px;
+  padding: 0 20px;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  margin: 0 10px 30px;
+}
+
+.name img {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.name p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.types {
+  margin-top: 30px;
+
+  button {
+    margin: 10px 20px;
+    background-color: #23242e;
+    border: 1px solid #adaeaf;
+    color: #adaeaf;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .selected{
+    background-color: #adaeaf;
+    color: #23242e;
+  }
+}
+
+.details{
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 20px 0;
+
+  div{
+    display: flex;
+    font-size: 1.1rem;
+  }
+
+  p{
+    margin-right: 7px;
+    color: #adaeaf;
+    font-weight: 700;
+  }
 }

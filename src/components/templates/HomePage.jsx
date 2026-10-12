@@ -11,7 +11,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true);
 
   const [page, setPage] = useState(1);
-  const [currency, setCurrency] = useState('usd');
+  const [currency, setCurrency] = useState("usd");
   const [chart, setChart] = useState(null);
 
   useEffect(() => {
@@ -43,8 +43,18 @@ export default function HomePage() {
 
   return (
     <>
-      <Search currency={currency} setCurrency={setCurrency} />
-      <TableCoins data={data} error={error} loading={loading} currency={currency} setChart={setChart} />
+      <Search
+        currency={currency}
+        setCurrency={setCurrency}
+        setChart={setChart}
+      />
+      <TableCoins
+        data={data}
+        error={error}
+        loading={loading}
+        currency={currency}
+        setChart={setChart}
+      />
       <Pagination
         prevHandler={prevHandler}
         nextHandler={nextHandler}

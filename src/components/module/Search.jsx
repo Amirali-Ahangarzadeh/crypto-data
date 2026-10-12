@@ -4,7 +4,7 @@ import style from "../../assets/css/search.module.css";
 
 import { RotatingLines } from "react-loader-spinner";
 
-export default function Search({ currency, setCurrency }) {
+export default function Search({ currency, setCurrency, setChart }) {
   const [text, setText] = useState("");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -28,6 +28,17 @@ export default function Search({ currency, setCurrency }) {
     if (text.length < 3) {
       setData([]);
     }
+  };
+
+  const showHandler = async (id) => {
+    const result = await getData(
+      `coins/${id}/market_chart?vs_currency=usd&days=1`,
+    );
+
+    const coin = await getData(`coins/${id}`);
+    setChart({ ...result.data, coin: coin.data, search: true });
+    setText("");
+    setData([]);
   };
   return (
     <div className={style.serachBox}>
@@ -60,7 +71,10 @@ export default function Search({ currency, setCurrency }) {
               {data.length > 0 && (
                 <ul>
                   {data.map((searchData) => (
-                    <li key={searchData.id}>
+                    <li
+                      key={searchData.id}
+                      onClick={() => showHandler(searchData.id)}
+                    >
                       <img src={searchData.thumb} alt="" />
                       <p>{searchData.name}</p>
                     </li>

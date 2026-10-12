@@ -70,7 +70,7 @@ const TableRow = ({ coin, counter, currency, setChart }) => {
     const result = await getData(
       `coins/${coin.id}/market_chart?vs_currency=usd&days=1`,
     );
-    setChart(result.data);
+    setChart({...result.data, coin : coin});
   };
   return (
     <tr key={coin.id}>
